@@ -1,0 +1,226 @@
+#headers {
+    align-content: center;
+}
+#headers:hover {
+    cursor: pointer;
+}
+#header-box {
+    display: flex;
+    background-color: dodgerblue; /* Let's go Dodgers */
+    font-family: 'Arial Rounded MT ExtraBold', sans-serif;
+    color: white;
+    height: 15vh;
+    padding-top: 5vh;
+}
+#body-box {
+    display: flex;
+    background-repeat: repeat;
+    background-size: 150px;
+    align-items: flex-start;
+    gap: 5vh;
+    padding: 5vh;
+}
+#left-box #right-box {
+    display: flex;
+    flex-direction: column;
+}
+#left-box {
+    margin-left: auto;
+    margin-right: auto;
+}
+#right-box {
+    margin-left: auto;
+    margin-right: auto;
+}
+#me-section {
+    display: flex;
+    align-content: space-evenly;
+    border: 3px solid blueviolet;
+    /* padding: 5px; */
+    margin-bottom: 5vh;
+}
+#me-box {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: left;
+    background-color: #f1f1f1;
+}
+#profile-picture {
+    max-width: 300px;
+    max-height: 300px;
+}
+#profile-bio {
+    margin-left: 0.5em;
+    padding: 10px 10px 10px 10px;
+}
+#im-online {
+    max-width: 100px;
+    max-height: 100px;
+}
+table {
+    border-spacing: 1vh;
+    width: 100%;
+}
+h1, h3 {
+    padding-left: 2vh;
+    line-height: 0.75;
+}
+td {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: center;
+    border: 2px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+div {
+    /* border: 2px solid black; */
+    align-content: center;
+}
+.friend {
+    /* justify-content: center; */
+    /* padding: 0px 5px 5px 5px; */
+    width: 25%;
+    background-color: #f1f1f1;
+    border: 2px solid purple;
+}
+.friend-picture {
+    justify-content: flex-end;
+    border: 0.5px solid grey;
+    height: 100px;
+    width: 100px;
+}
+.friend-name{
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1;
+}
+#logo {
+    max-width: 125px;
+    max-height: 125px;
+}
+#logo:hover {
+    cursor: pointer;
+}
+#blurb-section {
+    margin-bottom: 5vh;
+    border: 3px solid blueviolet;
+    background-color: #f1f1f1;
+}
+.right-hyperlink {
+    width: 50%;
+}
+.container-box {
+    background-image: url('https://i.gifer.com/1yjZ.gif');
+    background-position: 60px;
+    border: 2px solid purple;
+}
+#friends-section {
+    background-color: #f1f1f1;
+    border: 3px solid purple;
+}
+#contact-section {
+    border: 3px solid blueviolet;
+    background-color: #f1f1f1;
+    margin-bottom: 5vh;
+}
+#is-in-your-extended-network {
+    font-weight: bolder;
+    background-color: #f1f1f1;
+    border: 5px solid black;
+    margin-bottom: 5vh;
+    text-align: center;
+    padding: 2vh;
+}
+.left-hyperlink, .right-hyperlink {
+    background-color: #f1f1f1;
+    text-align: left;
+    padding: 2px;
+    justify-content: center;
+}
+.icons {
+    align-items: left;
+    justify-content: left;
+    padding: 2px;
+    width: 15%;
+    height: 15%;
+    vertical-align: center;
+}
+.contact-section-button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-right: 10%;
+    justify-content: space-evenly;
+    border: 1px solid purple;
+}
+#ad-section {
+    border: 3px solid purple;
+    height: 20vh;
+    margin-top: 5vh;
+}
+.blurb {
+    background-color: black;
+}
+.blurb p {
+    padding-left: 5%;
+    color: white;
+}
+#about-text {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+#about-text p {
+    font-size: 125%;
+    font-family: monospace;
+    line-height: 0.5;
+}
+@keyframes blinking {
+    /* 0% {opacity: 1;}
+    100% {opacity: 0;} */
+    50% {opacity: 0;}
+}
+#blinking-cursor {
+    animation: blinking 1200ms linear infinite;
+}
+.graphics-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.contact-section-button:hover {
+    background-color: #6495ed;
+    /* opacity: 50%; */
+}
+.contact-section-button {
+    /* cursor: url('images/cursor-natalie-nunn-chin.png') 12 12, auto; */
+    cursor: pointer;
+}
+#me:hover {
+    /* border: 3px solid white; */
+    font-weight: 900;
+    cursor: pointer;
+}
+#this-website:hover {
+    /* border: 3px solid white; */
+    font-weight: 900;
+    cursor: pointer;
+}
+/* #header-box:hover {
+
+} */
+.skill-picture {
+    height: 100px;
+    width: 100px;
+    padding: 10px 5px 0px 5px;
+}
+#skills-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

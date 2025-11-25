@@ -10,7 +10,7 @@
     font-family: 'Arial Rounded MT ExtraBold', sans-serif;
     color: white;
     height: 15vh;
-    width: 100%;
+    width: 100vw;
     padding-top: 5vh;
 }
 #body-box {
@@ -19,6 +19,7 @@
     background-size: 150px;
     align-items: flex-start;
     gap: 5vh;
+    width: 100vw;
     padding: 5vh;
 }
 #left-box #right-box {

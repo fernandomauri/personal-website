@@ -1,5 +1,6 @@
 window.onload = function() {
     block();
+    popUp();
     // changeCursor();
     // changeTitle();
 }
@@ -26,7 +27,7 @@ function block() {
     blockButton.addEventListener("click", function() {
         if (buttonText.textContent === "Block User") {
             document.getElementById("block-button-text").textContent = "Unblock User";
-            document.getElementById("body-box").style.backgroundImage = 'url(images/blocked.png)';
+            document.getElementById("body-box").style.backgroundImage = 'url(images/backgrounds/blizzocked.png)';
         } else {
             document.getElementById("block-button-text").textContent = "Block User";
             document.getElementById("body-box").style.backgroundImage = "none";
@@ -37,4 +38,19 @@ function block() {
 function rotateAds() {
     let fakeAds = ['images/ad-altima.png', 'images/ad-veneer-tech'];
     let ad = document.getElementById('ad');
+}
+
+function popUp() {
+    let dialogPopup = document.getElementById('hit-me-up');
+    let hmuBox = document.getElementById('call-im-button');
+
+    hmuBox.addEventListener('click', function() {
+        dialogPopup.showModal();
+    })
+}
+
+function copyLink() {
+    navigator.clipboard.writeText('https://linkedin.com/in/fernandomauri');
+    let dialogPopup = document.getElementById('copied-to-clipboard');
+    dialogPopup.showModal();
 }

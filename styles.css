@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+    padding: 0;
+}
 #headers {
     align-content: center;
 }
@@ -8,31 +12,29 @@
     display: flex;
     background-color: dodgerblue; /* Let's go Dodgers */
     font-family: 'Arial Rounded MT ExtraBold', sans-serif;
+    flex-wrap: wrap;
     color: white;
     height: 15vh;
-    width: 100vw;
-    padding-top: 5vh;
+    width: 100%;
+    padding-top: 3vh;
 }
 #body-box {
     display: flex;
     background-repeat: repeat;
     background-size: 150px;
     align-items: flex-start;
+    justify-content: space-evenly;
     gap: 5vh;
-    width: 100vw;
-    padding: 5vh;
+    width: 100%;
+    padding-top: 5vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-bottom: 2vh;
 }
 #left-box #right-box {
     display: flex;
     flex-direction: column;
-}
-#left-box {
-    margin-left: auto;
-    margin-right: auto;
-}
-#right-box {
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: space-between;
 }
 #me-section {
     display: flex;
@@ -117,7 +119,7 @@ p {
     width: 50%;
 }
 .container-box {
-    background-image: url('https://i.gifer.com/1yjZ.gif');
+    background-image: url('images/backgrounds/i-be-super-wavy.gif');
     background-position: 60px;
     border: 2px solid purple;
 }
@@ -191,13 +193,35 @@ p {
 }
 .graphics-box {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: column;
     margin-top: 2vh;
     margin-bottom: 2vh;
+}
+.graphic {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* border: 3px solid black; */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2vh;
+}
+.glitter-letters {
+    height: 8vh;
+    width: 8vh;
 }
 .contact-section-button:hover {
     background-color: #6495ed;
     /* opacity: 50%; */
+}
+a {
+    text-decoration: none;
+}
+.friend:hover {
+    background-color: #6495ed;
+    opacity: 75%;
 }
 .contact-section-button {
     /* cursor: url('images/cursor-natalie-nunn-chin.png') 12 12, auto; */
@@ -213,9 +237,9 @@ p {
     font-weight: 900;
     cursor: pointer;
 }
-/* #header-box:hover {
-
-} */
+#music-player {
+    margin-bottom: 5vh;
+}
 .skill-picture {
     height: 100px;
     width: 100px;
@@ -225,4 +249,28 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+#message-form-box {
+    padding: 10vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#form {
+    width: 100%;
+}
+#ad {
+    width: 100%;
+    height: 100%;
+}
+footer {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+dialog {
+    text-align: center;
+}
+#ghostface, #clippy {
+    width: 30vh;
+    height: 30vh;
 }

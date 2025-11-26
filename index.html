@@ -13,7 +13,7 @@
             <img src="images/logo.png" id="logo">
             <div id="headers">
                 <h1>whatsmyspace</h1>
-                <h3>a place for friends</h3>
+                <h3>a place for links</h3>
             </div>
         </div>
         <div id="body-box">
@@ -39,13 +39,18 @@
                     <div class="container-box">
                         <table>
                             <tr>
-                                <td class="left-hyperlink">
+                                <td class="left-hyperlink" onclick="location.href='send-message.html'">
                                     <div class="contact-section-button">     
                                         <img src="images/icons/send-message.png" style="width: 20%; height: 30%;" class="icons"/>
                                         <p class="button-text">Send Message</p>
                                     </div>
                                 </td>
-                                <td class="right-hyperlink">
+                                <td class="right-hyperlink" onclick="copyLink()">
+                                    <dialog id="copied-to-clipboard">
+                                        <img id="clippy" src="images/clippy.jpg">
+                                        <p>Fernando's profile link has been copied to clipboard.</p>
+                                        <p>[Esc] to Close</p>
+                                    </dialog>
                                     <div class="contact-section-button">
                                         <img src="images/icons/forward.png" class="icons"/>
                                         <p class="button-text">Forward to Friend</p>
@@ -54,7 +59,7 @@
                             </tr>
                             <tr>
                                 <td class="left-hyperlink" id="add-friend-button">
-                                    <a href="https://linkedin.com/in/fernandomauri" style="text-decoration: none;">
+                                    <a href="https://linkedin.com/in/fernandomauri" target="_blank" rel="noopener noreferrer">
                                         <div class="contact-section-button">
                                             <img src="images/icons/add-friend.png" class="icons">
                                             <p class="button-text">Add to Friends</p>
@@ -69,7 +74,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="left-hyperlink">
+                                <td class="left-hyperlink" id="call-im-button">
+                                    <dialog id="hit-me-up">
+                                        <!-- <h3>Call me! I miss you.</h3> -->
+                                        <img src="images/no-you-hang-up.png" id="ghostface">
+                                        <p>[Esc] to Close</p>
+                                    </dialog>
                                     <div class="contact-section-button">
                                         <img src="images/icons/im.png" class="icons"/>
                                         <p class="button-text">IM/Call</p>
@@ -89,10 +99,26 @@
                 <div id="music-player">
                     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4dlFGIn5KP6AaCZSujM7cj?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
+                <div class="graphics-box">
+                    <div class="graphic">
+                        <!-- "Blingee" style letters with glitter for the aesthetic. -->
+                        <img src="images/blingee/b.gif" class="glitter-letters">
+                        <img src="images/blingee/a.gif" class="glitter-letters">
+                        <img src="images/blingee/d.gif" class="glitter-letters">
+                        <img src="images/blingee/d.gif" class="glitter-letters">
+                        <img src="images/blingee/i.gif" class="glitter-letters">
+                        <img src="images/blingee/e.gif" class="glitter-letters">
+                    </div>
+                </div>
             </div>
             <div id="right-box">
                 <div id="is-in-your-extended-network">
                     <p>Fernando is in your extended network</p>
+                </div>
+                <div class="graphics-box">
+                    <div class="graphic">
+                        <img src="images/blingee/yo-homies.gif" alt="Yo homies">
+                    </div>
                 </div>
                 <!-- Do quick About Me information and some flair -->
                 <div id="blurb-section">
@@ -103,19 +129,12 @@
                                 <p>About</p>
                                 <p>.</p>
                                 <p id="me" onclick="location.href='aboutme.html'"><span class="vertical-stick">|</span><br><span class="vertical-stick">|</span>__ Me</p>
-                                <!-- <p id="this-website" onclick="location.href='aboutthissite.html'"><span class="vertical-stick">|</span><br><span class="vertical-stick">|</span>__ This Website<span id="blinking-cursor" style="font-weight:bolder;">|</span><br><span class="vertical-stick">|</span></p> -->
-                                <p id="this-website"><span class="vertical-stick">|</span><br><span class="vertical-stick">|</span>__ <a href="https://github.com/fernandomauri/personal-website/blob/main/README.md" style="color: white; text-decoration: none;">This Website</a><span id="blinking-cursor" style="font-weight:bolder;">|</span><br><span class="vertical-stick">|</span></p>
+                                <p id="this-website"><span class="vertical-stick">|</span><br><span class="vertical-stick">|</span>__ <a href="https://github.com/fernandomauri/personal-website/blob/main/README.md" target="_blank" rel="noopener noreferrer" style="color: white;">This Website</a><span id="blinking-cursor" style="font-weight:bolder;">|</span><br><span class="vertical-stick">|</span></p>
                             </div>
                         </div>
                         <div class="graphics-box">
                             <div class="graphic">
-                                <!-- "Blingee" style letters with glitter for the aesthetic. -->
-                                <img src="https://text.glitter-graphics.net/sblue/b.gif" class="glitter-letters">
-                                <img src="https://text.glitter-graphics.net/sblue/a.gif" class="glitter-letters">
-                                <img src="https://text.glitter-graphics.net/sblue/d.gif" class="glitter-letters">
-                                <img src="https://text.glitter-graphics.net/sblue/d.gif" class="glitter-letters">
-                                <img src="https://text.glitter-graphics.net/sblue/i.gif" class="glitter-letters">
-                                <img src="https://text.glitter-graphics.net/sblue/e.gif" class="glitter-letters">
+                                <img src="images/blingee/are-you.gif" alt="Are you stalking me? cause that would be SUPER!">
                             </div>
                         </div>
                     </div>
@@ -127,16 +146,22 @@
                         <table>
                             <tr>
                                 <td class="friend">
+                                    <a href="https://en.wikipedia.org/wiki/Tom_Anderson" target="_blank" rel="noopener noreferrer">
                                     <p class="friend-name">Tom</p>
-                                    <img src="https://pbs.twimg.com/profile_images/1237550450/mstom_400x400.jpg" alt="Tom" class="friend-picture">
+                                    <img src="images/friends/myspace-tom.jpg" alt="Tom" class="friend-picture">
+                                    </a>
                                 </td>
                                 <td class="friend">
+                                    <a href="https://en.wikipedia.org/wiki/Tila_Tequila" target="_blank" rel="noopener noreferrer">
                                     <p class="friend-name">Tila</p>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Tila_Tequila_2008.jpg" alt="Tila Tequila" class="friend-picture">
+                                    <img src="images/friends/tila-tequila.png" alt="Tila Tequila" class="friend-picture">
+                                    </a>
                                 </td>
                                 <td class="friend">
+                                    <a href="https://en.wikipedia.org/wiki/Natalie_Nunn" target="_blank" rel="noopener noreferrer">
                                     <p class="friend-name">Natalie</p>
-                                    <img src="images/natalie-nunn.png" alt="Natalie Nunn" class="friend-picture">
+                                    <img src="images/friends/natalie-nunn.png" alt="Natalie Nunn" class="friend-picture">
+                                    </a>
                                 </td>
                             </tr>
                         </table>
@@ -145,12 +170,12 @@
                 <!-- These are not to be mistaken for real ads, I put these together with GIMP and Word Art -->
                 <div id="ad-section">
                     <!-- <img src="images/ads/ad-altima.png" style="width: 100%; height: 100%;" alt="Used Altimas for Sale"> -->
-                    <img src="images/ads/ad-veneer-tech.png" style="width: 100%; height: 100%;" alt="Veneer Tech School" id="ad">
+                    <img src="images/ads/ad-veneer-tech.png" alt="Veneer Tech School" id="ad">
                 </div>
             </div>
         </div>
     </body>
     <footer>
-        <sub style="font-family:Arial, Helvetica, sans-serif;">Source code for this website maintained by Fernando Mauri and is available here: <a href="https://github.com/fernandomauri/personal-website">Source Code</a></sub>
+        <sub>Source code for this website maintained by Fernando Mauri and is available here: <a href="https://github.com/fernandomauri/personal-website" target="_blank" rel="noopener noreferrer">Source Code</a></sub>
     </footer>
 </html>

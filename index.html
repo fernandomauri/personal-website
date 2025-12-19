@@ -36,63 +36,56 @@
                 <!-- The "Contact Me" section with the Message boxes-->
                 <div id="contact-section">
                     <p style="font-size: 16px; margin-left: 1.5vh"><strong>Contacting Fernando</strong></p>
-                    <div class="container-box">
-                        <table>
-                            <tr>
-                                <td class="left-hyperlink" onclick="location.href='send-message.html'">
-                                    <div class="contact-section-button">     
-                                        <img src="images/icons/send-message.png" style="width: 20%; height: 30%;" class="icons"/>
-                                        <p class="button-text">Send Message</p>
-                                    </div>
-                                </td>
-                                <td class="right-hyperlink" onclick="copyLink()">
-                                    <dialog id="copied-to-clipboard">
-                                        <img id="clippy" src="images/clippy.jpg">
-                                        <p>Fernando's profile link has been copied to clipboard.</p>
-                                        <p>[Esc] to Close</p>
-                                    </dialog>
-                                    <div class="contact-section-button">
-                                        <img src="images/icons/forward.png" class="icons"/>
-                                        <p class="button-text">Forward to Friend</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="left-hyperlink" id="add-friend-button">
-                                    <a href="https://linkedin.com/in/fernandomauri" target="_blank" rel="noopener noreferrer">
-                                        <div class="contact-section-button">
-                                            <img src="images/icons/add-friend.png" class="icons">
-                                            <p class="button-text">Add to Friends</p>
-                                        </div>
-                                    </a>
-                                </td>
-                                <td class="right-hyperlink">
-                                    <div class="contact-section-button">
-                                        <img src="images/icons/favorites.png" class="icons">
-                                        <p class="button-text">Add to Favorites</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="left-hyperlink" id="call-im-button">
-                                    <dialog id="hit-me-up">
-                                        <!-- <h3>Call me! I miss you.</h3> -->
-                                        <img src="images/no-you-hang-up.png" id="ghostface">
-                                        <p>[Esc] to Close</p>
-                                    </dialog>
-                                    <div class="contact-section-button">
-                                        <img src="images/icons/im.png" class="icons"/>
-                                        <p class="button-text">IM/Call</p>
-                                    </div>
-                                </td>
-                                <td class="right-hyperlink" id="block-button">
-                                    <div class="contact-section-button">
-                                        <img src="images/icons/block.png" class="icons"/>
-                                        <p id="block-button-text">Block User</p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                    <div id="contact-buttons-all" class="container-box">
+                        <button id="send-message" class="contact-section-button" onclick="location.href='send-message.html'"> 
+                            <img src="images/icons/send-message.png" style="width: 20%; height: 30%;" class="icons"/>
+                            <p class="button-text">Send Message</p>
+                        </button>
+                        <button id="forward-to-friend" class="contact-section-button" onclick="copyLink()">
+                            <img src="images/icons/forward.png" class="icons"/>
+                            <p class="button-text">Forward to Friend</p>
+                        </button>
+                        <dialog id="copied-to-clipboard-popup">
+                            <div class="pop-up-banner">
+                                <p class="header-buttons" onclick="closePopUp('copied-to-clipboard-popup')">X</button>
+                            </div>
+                            <img id="clippy" src="images/clippy.png">
+                            <p style="margin: 2vh;">Fernando's profile link has been copied to clipboard.</p>
+                        </dialog>
+                        <a href="https://linkedin.com/in/fernandomauri" target="_blank" rel="noopener noreferrer">
+                        <button id="add-to-friends" class="contact-section-button">
+                            <img src="images/icons/add-friend.png" class="icons"/>
+                            <p class="button-text">Add to Friends</p>
+                        </button>
+                        </a>
+                        <button id="add-to-favorites" class="contact-section-button">
+                            <img src="images/icons/favorites.png" class="icons"/>
+                            <p class="button-text">Add to Favorites</p>
+                        </button>
+                        <button id="call-im-button" class="contact-section-button" onclick="callImPopUp()">
+                            <img src="images/icons/im.png" class="icons"/>
+                            <p class="button-text">IM/Call</p>
+                        </button>
+                        <dialog id="hit-me-up-popup">
+                            <div class="pop-up-banner">
+                                <p class="header-buttons" onclick="closePopUp('hit-me-up-popup')">X</p>
+                            </div>
+                            <img src="images/no-you-hang-up.png" id="ghostface" style="margin: 2vh;">
+                        </dialog>
+                        <button id="block-button" class="contact-section-button" onclick="block()">
+                            <img src="images/icons/block.png" class="icons"/>
+                            <p id="block-button-text">Block User</p>
+                        </button>
+                        <dialog id="block-popup">
+                            <div class="pop-up-banner">
+                                <p class="header-buttons" onclick="closePopUp('block-popup')">X</p>
+                            </div>
+                            <p>Block?</p>
+                            <div id="block-choices">
+                                <p id="confirm-block" class="header-buttons" onclick="block()" style="width: 5vh; height: 2vh;">Yes</p>
+                                <p id="nevermind" class="header-buttons" onclick="closePopUp('block-popup')" style="width: 5vh; height: 2vh;">No</p>
+                            </div>
+                        </dialog>
                     </div>
                 </div>
                 <!-- Resembles the classic profile music player (minus autoplay), will eventually refactor to create one that isn't a Spotify embed -->
@@ -106,10 +99,38 @@
                         <img src="images/blingee/a.gif" class="glitter-letters">
                         <img src="images/blingee/d.gif" class="glitter-letters">
                         <img src="images/blingee/d.gif" class="glitter-letters">
-                        <img src="images/blingee/i.gif" class="glitter-letters">
+                        <img src="images/blingee/i.gif" class="glitter-letters" style="max-width: 5%;">
                         <img src="images/blingee/e.gif" class="glitter-letters">
                     </div>
                 </div>
+                <div id="private-key-block">
+                    <div id="terminal-header">
+                        <dialog id="header-button-pop-up">
+                            <div class="pop-up-banner">
+                                <p class="header-buttons" onclick="closePopUp('header-button-pop-up')">X</p>
+                            </div>
+                            <p style="margin: 2vh;">This isn't actually a button and is here for decoration.</p>
+                        </dialog>
+                        <p class="header-buttons" onclick="headerButtonPopUp('header-button-pop-up')">X</p>
+                        <p class="header-buttons" onclick="headerButtonPopUp('header-button-pop-up')">–</p>
+                        <p class="header-buttons" onclick="headerButtonPopUp('header-button-pop-up')" >+</p></span>
+                    </div>
+                    <p class="terminal-command"><strong>root@My-Profile:~$&emsp;&emsp;cat .ssh/id_rsa</strong></p>
+                    <p id="private-key-text">
+                        <!-- SOURCE: https://www.youtube.com/shorts/HmiuUV4XVxg -->
+                        -----BEGIN PRIVATE KEY-----<br><br>
+                        SaMThEfIrStNiGhTaTbEdWhEnYoUlEfTrOnMaDeOuT<br>
+                        TwOgIrLsAnDwItHtIsHeAdInBeTwEeNcOcKtAiLwAi<br>
+                        TrEsAnDbReAsTsThEnGrInDiNgWiThMuLtIpLeWoMeN<br>
+                        WhEnYoUlEfTcRyInGaTkLuTcHrOnWaShOlDiNgHaNdS<br>
+                        AnDdAnCiNgWiThAfEmAlEaNdToOkDoWnHeRnUmBeR<br>
+                        MuLtIpLePeOpLeKnOwThErEfOrEyOuShOuLdKnOwThE<br>
+                        TrUtHuSeThIsInFoRmAtIoNwIsElY<br><br>
+                        -----END PRIVATE KEY-----
+                    </p>
+                    <p class="terminal-command"><strong>root@My-Profile:~$&emsp;</strong><span class="vertical-stick" id="command-cursor" style="font-weight: bolder">|</span></p>
+                    <br>
+                </div>                
             </div>
             <div id="right-box">
                 <div id="is-in-your-extended-network">
@@ -117,21 +138,21 @@
                 </div>
                 <div class="graphics-box">
                     <div class="graphic">
-                        <img src="images/blingee/yo-homies.gif" alt="Yo homies">
+                        <img src="images/blingee/yo-homies.gif" id="yo-homies" alt="Yo homies">
                     </div>
                 </div>
                 <!-- Do quick About Me information and some flair -->
                 <div id="blurb-section">
                     <p style="font-size: 16px; margin-left: 1.5vh;"><strong>Fernando's Blurbs</strong></p>
                     <div class="container-box">
-                        <div class="blurb">
+                        <!-- <div class="blurb">
                             <div id="about-text">
                                 <p>About</p>
                                 <p>.</p>
                                 <p id="me" onclick="location.href='aboutme.html'"><span class="vertical-stick">|</span><br><span class="vertical-stick">|</span>__ Me</p>
                                 <p id="this-website"><span class="vertical-stick">|</span><br><span class="vertical-stick">|</span>__ <a href="https://github.com/fernandomauri/personal-website/blob/main/README.md" target="_blank" rel="noopener noreferrer" style="color: white;">This Website</a><span id="blinking-cursor" style="font-weight:bolder;">|</span><br><span class="vertical-stick">|</span></p>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="graphics-box">
                             <div class="graphic">
                                 <img src="images/blingee/are-you.gif" alt="Are you stalking me? cause that would be SUPER!">
@@ -141,36 +162,36 @@
                 </div>
                 <!-- The "Friends" section (include Tom obviously)-->
                 <div id="friends-section">
+                    <div>
                     <p style="font-size: 16px; margin-left: 1.5vh"><strong>Friends (3)</strong></p>
-                    <div class="container-box">
-                        <table>
-                            <tr>
-                                <td class="friend">
-                                    <a href="https://en.wikipedia.org/wiki/Tom_Anderson" target="_blank" rel="noopener noreferrer">
-                                    <p class="friend-name">Tom</p>
-                                    <img src="images/friends/myspace-tom.jpg" alt="Tom" class="friend-picture">
-                                    </a>
-                                </td>
-                                <td class="friend">
-                                    <a href="https://en.wikipedia.org/wiki/Tila_Tequila" target="_blank" rel="noopener noreferrer">
-                                    <p class="friend-name">Tila</p>
-                                    <img src="images/friends/tila-tequila.png" alt="Tila Tequila" class="friend-picture">
-                                    </a>
-                                </td>
-                                <td class="friend">
-                                    <a href="https://en.wikipedia.org/wiki/Natalie_Nunn" target="_blank" rel="noopener noreferrer">
-                                    <p class="friend-name">Natalie</p>
-                                    <img src="images/friends/natalie-nunn.png" alt="Natalie Nunn" class="friend-picture">
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
+                    </div>
+                    <div class="container-box" id="friend-box">
+                        <div class="friend">
+                            <a href="https://en.wikipedia.org/wiki/Tom_Anderson" target="_blank" rel="noopener noreferrer">
+                            <p class="friend-name">Tom</p>
+                            <img src="images/friends/myspace-tom.jpg" alt="Tom" class="friend-picture">
+                            </a>
+                        </div>
+                        <div class="friend">
+                            <a href="https://en.wikipedia.org/wiki/Tila_Tequila" target="_blank" rel="noopener noreferrer">
+                            <p class="friend-name">Tila</p>
+                            <img src="images/friends/tila-tequila.png" alt="Tila Tequila" class="friend-picture">
+                            </a>
+                        </div>
+                        <div class="friend">
+                            <a href="https://en.wikipedia.org/wiki/Natalie_Nunn" target="_blank" rel="noopener noreferrer">
+                            <p class="friend-name">Natalie</p>
+                            <img src="images/friends/natalie-nunn.png" alt="Natalie Nunn" class="friend-picture">
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- These are not to be mistaken for real ads, I put these together with GIMP and Word Art -->
                 <div id="ad-section">
                     <!-- <img src="images/ads/ad-altima.png" style="width: 100%; height: 100%;" alt="Used Altimas for Sale"> -->
-                    <img src="images/ads/ad-veneer-tech.png" alt="Veneer Tech School" id="ad">
+                    <div id="ad-box">
+                        <img id='ad' src="images/ads/ad-veneer-tech.png" alt="Ad">
+                    </div>
                 </div>
             </div>
         </div>

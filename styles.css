@@ -31,10 +31,11 @@ body {
     padding-right: 5vh;
     padding-bottom: 2vh;
 }
-#left-box #right-box {
+#left-box, #right-box {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
 }
 #me-section {
     display: flex;
@@ -47,6 +48,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     align-content: left;
+    width: 100%;
     background-color: #f1f1f1;
 }
 #profile-picture {
@@ -69,35 +71,26 @@ h1, h3 {
     padding-left: 2vh;
     line-height: 0.75;
 }
-td {
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: center;
-    border: 2px solid black;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
 div {
-    /* border: 2px solid black; */
     align-content: center;
 }
 .friend {
-    /* justify-content: center; */
-    /* padding: 0px 5px 5px 5px; */
+    /* align-content: center; */
     width: 25%;
-    background-color: #f1f1f1;
-    border: 2px solid purple;
+    height: 25%;
+    /* border: 5px solid green; */
 }
 .friend-picture {
-    justify-content: flex-end;
-    border: 0.5px solid grey;
-    height: 100px;
-    width: 100px;
+    border: 5px solid purple;
+    margin-left: 1.5vw;
+    height: 15vh;
+    width: 15vh;
 }
 .friend-name{
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
     margin: auto;
-    width: 100%;
+    /* border: 2px solid purple; */
 }
 p {
     font-family: Arial, Helvetica, sans-serif;
@@ -136,7 +129,7 @@ p {
     font-weight: bolder;
     background-color: #f1f1f1;
     border: 5px solid black;
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
     text-align: center;
     padding: 2vh;
 }
@@ -150,24 +143,20 @@ p {
     align-items: left;
     justify-content: left;
     padding: 2px;
-    width: 15%;
-    height: 15%;
+    width: 3vw;
+    height: 3vh;
     vertical-align: center;
 }
 .contact-section-button {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-right: 10%;
-    justify-content: space-evenly;
-    border: 1px solid purple;
+    width: 100%;
+    border: 2px solid purple;
 }
 #ad-section {
-    border: 3px solid purple;
-    height: 20vh;
+    display: flex;
+    justify-content: center;
     margin-top: 5vh;
 }
-.blurb {
+#about-menu {
     background-color: black;
 }
 .blurb p {
@@ -182,6 +171,7 @@ p {
     font-size: 125%;
     font-family: monospace;
     line-height: 0.5;
+    white-space: nowrap;
 }
 @keyframes blinking {
     /* 0% {opacity: 1;}
@@ -195,50 +185,47 @@ p {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin: 5vh;
 }
 .graphic {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* border: 3px solid black; */
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2vh;
 }
 .glitter-letters {
-    height: 8vh;
-    width: 8vh;
+    height: 10%;
+    width: 10%;
 }
 .contact-section-button:hover {
     background-color: #6495ed;
-    /* opacity: 50%; */
+    cursor: pointer;
+    opacity: 75%;
 }
 a {
     text-decoration: none;
+
+    width: 100%;
 }
 .friend:hover {
     background-color: #6495ed;
-    opacity: 75%;
+    opacity: 90%;
 }
-.contact-section-button {
-    /* cursor: url('images/cursor-natalie-nunn-chin.png') 12 12, auto; */
-    cursor: pointer;
-}
-#me:hover {
+/* #me:hover {
     /* border: 3px solid white; */
-    font-weight: 900;
+    /* font-weight: 900;
     cursor: pointer;
-}
-#this-website:hover {
+} */
+/* #this-website:hover { */
     /* border: 3px solid white; */
-    font-weight: 900;
-    cursor: pointer;
-}
+    /* font-weight: 900;
+    cursor: pointer; */
+/* } */
 #music-player {
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
 }
 .skill-picture {
     height: 100px;
@@ -260,8 +247,14 @@ a {
     width: 100%;
 }
 #ad {
-    width: 100%;
-    height: 100%;
+    border: 2px solid purple;
+    width: 75%;
+    height: 75%;
+}
+#ad-box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 footer {
     text-align: center;
@@ -269,8 +262,75 @@ footer {
 }
 dialog {
     text-align: center;
+    padding: 0;
+    max-width: 75vw;
 }
 #ghostface, #clippy {
-    width: 30vh;
-    height: 30vh;
+    max-height: 20vh;
+}
+.banner {
+    display: flex;
+    flex-direction: initial;
+    align-items: left;
+}
+#contact-buttons-all {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 3px;
+    gap: 3px;
+}
+#friend-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+#yo-homies {
+    width: 75%;
+}
+#private-key-block {
+    background-color: black;
+    text-align: left;
+}
+#private-key-text, .terminal-command {
+    font-family: monospace;
+    color: white;
+    padding-left: 2vh;
+    padding-bottom: 1vh;
+}
+.terminal-command {
+    padding-left: 2vh;
+    padding-bottom: 1.5vh;
+}
+#terminal-header, .pop-up-banner {
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: #71797E; */
+    background-color: #6082B6;
+    border: 2px solid black;
+    max-height: 5%;
+    max-width: 100%;
+}
+.header-buttons {
+    height: 1.5vh;
+    width: 1.5vh;
+    margin: 0.5%;
+    font-weight: bold;
+    text-align: center;
+    border: 3px solid black;
+    border-style: outset;
+    background-color: #E5E4E2;
+}
+.header-buttons:hover {
+    cursor: pointer;
+    border-style: inset;
+}
+#command-cursor {
+    animation: blinking 1200ms linear infinite;
+}
+#block-choices {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+#block-popup {
+    width: 25vw;
 }

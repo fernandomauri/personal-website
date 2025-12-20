@@ -16,8 +16,6 @@ body {
     color: white;
     height: 15vh;
     width: 100vw;
-    padding-top: 3vh;
-    /* border: 3px solid orange; */
 }
 #body-box {
     display: flex;
@@ -104,8 +102,8 @@ p {
     line-height: 1;
 }
 #logo {
-    max-width: 125px;
-    max-height: 125px;
+    width: 10%;
+    height: 100%;
 }
 #logo:hover {
     cursor: pointer;

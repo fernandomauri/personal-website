@@ -15,8 +15,9 @@ body {
     flex-wrap: wrap;
     color: white;
     height: 15vh;
-    width: 100%;
+    width: 100vw;
     padding-top: 3vh;
+    /* border: 3px solid orange; */
 }
 #body-box {
     display: flex;
@@ -25,39 +26,46 @@ body {
     align-items: flex-start;
     justify-content: space-evenly;
     gap: 5vh;
-    width: 100%;
+    width: 100vw;
     padding-top: 5vh;
-    padding-left: 5vh;
-    padding-right: 5vh;
     padding-bottom: 2vh;
+    /* border: 5px solid pink; */
 }
 #left-box, #right-box {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    /* border: 5px solid green; */
+    gap: 4vh;
+    padding: 3%;
 }
 #me-section {
     display: flex;
     align-content: space-evenly;
     border: 3px solid blueviolet;
-    /* padding: 5px; */
     margin-bottom: 5vh;
 }
 #me-box {
     display: flex;
-    flex-flow: row wrap;
+    /* flex-flow: column; */
     align-content: left;
     width: 100%;
     background-color: #f1f1f1;
 }
+#profile-picture-box {
+    width: 50%;
+    height: 100%;
+    border: 1px solid purple;
+}
 #profile-picture {
-    max-width: 300px;
-    max-height: 300px;
+    width: 100%;
+    height: 100%;
 }
 #profile-bio {
-    margin-left: 0.5em;
-    padding: 10px 10px 10px 10px;
+    width: 50%;
+    height: 100%;
+    padding-left: 2%;
 }
 #im-online {
     max-width: 100px;
@@ -75,22 +83,21 @@ div {
     align-content: center;
 }
 .friend {
-    /* align-content: center; */
     width: 25%;
     height: 25%;
-    /* border: 5px solid green; */
 }
 .friend-picture {
     border: 5px solid purple;
     margin-left: 1.5vw;
-    height: 15vh;
-    width: 15vh;
+    height: 75%;
+    width: 75%;
 }
 .friend-name{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     margin: auto;
-    /* border: 2px solid purple; */
+    text-decoration: none;
+    color: black;
 }
 p {
     font-family: Arial, Helvetica, sans-serif;
@@ -129,7 +136,7 @@ p {
     font-weight: bolder;
     background-color: #f1f1f1;
     border: 5px solid black;
-    margin-bottom: 10vh;
+    /* margin-bottom: 10vh; */
     text-align: center;
     padding: 2vh;
 }
@@ -194,7 +201,7 @@ p {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2vh;
+    /* margin-bottom: 2vh; */
 }
 .glitter-letters {
     height: 10%;
@@ -210,9 +217,9 @@ a {
 
     width: 100%;
 }
-.friend:hover {
+.friend-picture:hover {
     background-color: #6495ed;
-    opacity: 90%;
+    opacity: 80%;
 }
 /* #me:hover {
     /* border: 3px solid white; */
@@ -224,9 +231,9 @@ a {
     /* font-weight: 900;
     cursor: pointer; */
 /* } */
-#music-player {
+/* #music-player {
     margin-bottom: 10vh;
-}
+} */
 .skill-picture {
     height: 100px;
     width: 100px;
@@ -238,13 +245,12 @@ a {
     justify-content: center;
 }
 #message-form-box {
-    padding: 10vh;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 95%;
+    height: 100%;
 }
 #form {
     width: 100%;
+    height: 100%;
 }
 #ad {
     border: 2px solid purple;
@@ -257,6 +263,7 @@ a {
     flex-direction: column;
 }
 footer {
+    width: 100vw;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -264,9 +271,11 @@ dialog {
     text-align: center;
     padding: 0;
     max-width: 75vw;
+    backdrop-filter: blur();
 }
 #ghostface, #clippy {
-    max-height: 20vh;
+    height: 75%;
+    width: 50%;
 }
 .banner {
     display: flex;
@@ -284,7 +293,7 @@ dialog {
     flex-wrap: wrap;
 }
 #yo-homies {
-    width: 75%;
+    width: 100%;
 }
 #private-key-block {
     background-color: black;
@@ -309,9 +318,9 @@ dialog {
     max-height: 5%;
     max-width: 100%;
 }
-.header-buttons {
-    height: 1.5vh;
-    width: 1.5vh;
+.header-buttons, .block-buttons {
+    height: 10%;
+    width: 3%;
     margin: 0.5%;
     font-weight: bold;
     text-align: center;
@@ -319,18 +328,47 @@ dialog {
     border-style: outset;
     background-color: #E5E4E2;
 }
-.header-buttons:hover {
+.block-buttons{
+    width: 20%;
+}
+.header-buttons:hover, .block-buttons:hover {
     cursor: pointer;
     border-style: inset;
+    opacity: 80%;
 }
 #command-cursor {
     animation: blinking 1200ms linear infinite;
 }
 #block-choices {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    margin-top: 10vh;
+    gap: 5vh;
+}
+#block-options {
+    display: flex;
+    flex-wrap: column;
     justify-content: space-evenly;
+    width: 100%;
+    height: 25%;
 }
 #block-popup {
-    width: 25vw;
+    width: 40vw;
+    height: 30vh;
+}
+#new-message-popup {
+    width: 50vw;
+    height: 50vh;
+}
+#copied-to-clipboard-popup {
+    width: 40vw;
+    height: 40vh;
+}
+#hit-me-up-popup {
+    width: 40vw;
+    height: 40vh;
+}
+#form {
+    width: 100%;
+    height: 100%;
 }

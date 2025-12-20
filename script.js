@@ -15,6 +15,11 @@ function block() {
     }
 }
 
+function newMessage() {
+    let dialogPopup = document.getElementById('new-message-popup');
+    dialogPopup.showModal();
+}
+
 function callImPopUp() {
     let dialogPopup = document.getElementById('hit-me-up-popup');
     randomColors(dialogPopup);

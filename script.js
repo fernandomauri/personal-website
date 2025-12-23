@@ -59,3 +59,19 @@ function copyLink() {
     randomColors(dialogPopup);
     dialogPopup.showModal();
 }
+
+// function sleepTimer(ms) {
+//     return new Promise(resolve => setTimeout(resolve, ms));
+// }
+
+// function changeAd() {
+//     ad = document.getElementById('ad-box');
+//     ad1 = '<img src="images/ads/ad-altima.png" style="width: 100%; height: 100%;" alt="Used Altimas for Sale">';
+//     ad2 = '<img src="images/ads/ad-veneer-tech.png" style="width: 100%; height: 100%;" alt="Veneer Tech Training Institute">';
+//     ad.innerHTML(ad1);
+//     sleepTimer(2000);
+//     ad.innerHTML(ad2);
+//     sleepTimer(2000);
+// }
+
+// const repeatAds = setInterval(changeAd, 100);

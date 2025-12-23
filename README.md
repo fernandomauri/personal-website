@@ -22,4 +22,6 @@ I wanted this website to feel a bit "interactive", which required some animation
 
 Having a custom domain would make it easier for user readability and memorability, which is important for personal branding. I think that creators should use custom domains for their information hubs. I'd like to include an example: I've noticed that personal websites are embedded in Linktree pages, which adds an extra step and discourages traffic to the personal website. There could be some sort of self-hosted information hub that naturally weaves its way into a personal website. I sometimes find myself forgetting contact information when I meet creators in person and they ask me to check out their work. I genuinely would like to check out their work, I'm just sometimes forgetful.
 
-An added bonus would be that I also wanted to have a bit of fun playing with DNS records (adding a CNAME to GitHub Pages to verify that I own my domain).
+An added bonus would be that I also wanted to have a bit of fun playing with DNS records (adding a CNAME to GitHub Pages to verify that I own my domain and an A record for resolution), and I also added the records to allow me to send/receive emails.
+
+TLS will be enforced for each connection, and GitHub Pages does so by generating LetsEncrypt certificates.

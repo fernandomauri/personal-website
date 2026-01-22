@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 #headers {
     align-content: center;
@@ -14,8 +15,8 @@ body {
     font-family: 'Arial Rounded MT ExtraBold', sans-serif;
     flex-wrap: wrap;
     color: white;
-    height: 19vh;
-    width: 100vw;
+    min-height: 19svh;
+    width: 100%;
 }
 #body-box {
     display: flex;

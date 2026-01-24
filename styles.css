@@ -1,6 +1,11 @@
 body {
+    max-width: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+html {
+    max-width: 100%;
     overflow-x: hidden;
 }
 #headers {
@@ -25,7 +30,7 @@ body {
     align-items: flex-start;
     justify-content: space-evenly;
     gap: 5vh;
-    width: 100vw;
+    width: 100%;
     padding-top: 5vh;
     padding-bottom: 2vh;
     /* border: 5px solid pink; */
@@ -76,10 +81,7 @@ table {
 }
 h1, h3 {
     padding-left: 2vh;
-    line-height: 0.75;
-}
-div {
-    align-content: center;
+    line-height: 1.1;
 }
 .friend {
     width: 25%;
